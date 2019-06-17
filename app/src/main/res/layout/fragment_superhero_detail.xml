@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="superheroe"
+                type="com.inigofrabasa.supermarvel.data.model.Model.Superheroe"/>
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/border_background"
+            android:elevation="2dp"
+    >
+
+        <LinearLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+        >
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    app:cardCornerRadius="16dp">
+
+                <ImageView
+                        android:id="@+id/superheroe_item_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:imageFromUrl="@{superheroe.photo}"
+                />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="160dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+            >
+
+                <TextView
+                        android:id="@+id/tv_superheroe_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="17sp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@{superheroe.name}"
+                /><!--"-->
+
+                <TextView
+                        android:id="@+id/tv_superheroe_realname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textDarkColor"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@{`Real Name: `+superheroe.realName}"
+                /><!---->
+
+                <TextView
+                        android:id="@+id/tv_superheroe_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textDarkColor"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@{`Height: ` + superheroe.height}"
+                />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header"
+                android:orientation="vertical"
+                android:paddingTop="15dp"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                >
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/power_string_title"
+
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{superheroe.power}"
+                    android:paddingBottom="15dp"
+
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/abilities_string_title"
+
+            />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{superheroe.abilities}"
+                    android:paddingBottom="15dp"
+
+            />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

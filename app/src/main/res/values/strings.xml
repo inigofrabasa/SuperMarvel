@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SuperMarvel</string>
+    <string name="marvel_superheroes">Marvel Superheroes</string>
+    <string name="abilities_string_title">Abilities</string>
+    <string name="power_string_title">Power</string>
+</resources>
